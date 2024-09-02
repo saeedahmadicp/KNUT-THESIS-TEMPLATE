@@ -18,6 +18,8 @@ Each of the files and directories in the template as describe as below:
 
 Usage
 ---
+Downlaod the repository as zip file and import it in [Overleaf](https://www.overleaf.com/project/#) for updating the latex text in Overleaf.
+
 - first update the `title.tex` and `title2.text`, to update the contents of the front cover pages, and then compile the `frontmatter.tex` to generate the `frontmatter.pdf` pdf, save it in the same directory, as this file is directly imported in the main text file
 - update the titlePages and the rest of the contents in the chapters and abstract
 - save all the figures in the figures directory 
