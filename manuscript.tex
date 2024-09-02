@@ -1,0 +1,216 @@
+\documentclass[10pt]{report}
+\usepackage[paperwidth=18.5cm, paperheight=25cm]{geometry}
+
+% general packages
+\usepackage{graphicx} 
+\usepackage{emptypage}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{pgf}
+\usepackage{pgffor}
+\doublespacing
+\usepackage{float}
+\usepackage{boldline}
+\usepackage{xcolor,colortbl}
+\usepackage{tikz}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+\usepackage{pifont}
+\newcommand{\cmark}{\text{\ding{51}}}
+\newcommand{\xmark}{\text{\ding{55}}}
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+
+
+% figures:
+\usepackage{subfigure}  
+\usepackage{adjustbox}
+\usepackage{wrapfig}
+\usepackage{subfigure}
+\usepackage{rotating}
+\usepackage{lscape}
+
+% tables:
+\usepackage{tabularx,ragged2e,booktabs,caption}
+\usepackage{multicol,tabularx,capt-of}
+\usepackage{hhline}
+\usepackage{multirow}
+\usepackage{array}
+
+
+% for math equations
+\usepackage{amssymb}
+\usepackage{float}
+\usepackage{verbatim}
+\usepackage{amsmath} 
+\usepackage{amsthm}   
+
+% for acronyms and glossaries
+\usepackage{acronym}
+\usepackage{glossaries}
+\usepackage{xspace}
+
+% for hyperlinks
+% \usepackage[round]{natbib}
+\usepackage[colorlinks = true,
+            linkcolor = blue,
+            urlcolor  = blue,
+            citecolor = blue,
+            anchorcolor = blue]{hyperref}
+
+% \usepackage{sectsty}
+% \allsectionsfont{\bfseries}
+% \chapterfont{\centering\Large}
+% \sectionfont{\normalsize}
+% \subsectionfont{\normalsize}
+
+\usepackage[style=numeric, sorting=none, backend=biber]{biblatex}
+\usepackage[english]{babel}
+\addbibresource{references.bib}
+
+%\usepackage[numbers]{natbib}
+% \usepackage [english]{babel}
+% \usepackage [autostyle, english = american]{csquotes}
+% \MakeOuterQuote{"}
+
+
+
+%footer formatting
+
+\interfootnotelinepenalty=10000 
+
+\usepackage{epstopdf}
+
+
+\usepackage{setspace}
+\usepackage[]{enumitem}
+%\usepackage{lmodern}
+%\usepackage{librecaslon}
+\usepackage[T1]{fontenc}
+\usepackage{footnote}
+\usepackage{textcomp}
+\usepackage{kotex}
+\usepackage{fancyhdr}
+
+\usepackage{pdfpages}
+
+% title.
+\usepackage{titlesec}
+\usepackage{ragged2e}
+
+\titleformat{\chapter}
+  {\normalfont\Large\bfseries\centering}
+  {\Roman{chapter}. }
+  {0pt}
+  {\Large}
+
+\titlespacing*{\chapter}{0pt}{-50pt}{30pt}
+
+\titleformat{\section}
+  {\normalfont\normalsize\bfseries\RaggedRight}
+  {\thesection}{1em}{}
+
+\titlespacing*{\section}
+  {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+
+\titleformat{\subsection}
+  {\normalfont\small\bfseries\RaggedRight}
+  {\thesubsection}{1em}{}
+
+\titlespacing*{\subsection}
+  {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+% \titleformat{\chapter}
+%   {\normalfont\huge\bfseries\centering}
+%   {\Roman{chapter}. }
+%   {0pt}
+%   {\huge}
+
+% \titlespacing*{\chapter}{0pt}{-50pt}{20pt}
+
+% \tolerance=1000
+% \emergencystretch=0.1em
+\usepackage[none]{hyphenat}
+\sloppy
+
+\begin{document}
+
+%% cover pages
+% Include the cover page as a separate PDF
+\includepdf[pages=-]{frontmatters/frontmatter.pdf}
+
+%% rest of the title pages
+\begin{titlepage}
+\input{titlePages/title3}
+\end{titlepage}
+
+\begin{titlepage}
+\input{titlePages/title4}
+\end{titlepage}
+
+\begin{titlepage}
+\input{titlePages/title5}
+\end{titlepage}
+
+
+
+
+\pagenumbering{roman}
+\pagestyle{fancy}
+\fancyhf{}% clears all header and footer fields
+\fancyfoot[C]{-- ~\thepage~ --}
+\renewcommand*{\headrulewidth}{0pt}
+\renewcommand*{\footrulewidth}{0pt}
+
+\fancypagestyle{plain}{%
+  \fancyhf{}% clears all header and footer fields
+  \fancyfoot[C]{-- ~\thepage~ --}%
+  \renewcommand*{\headrulewidth}{0pt}%
+  \renewcommand*{\footrulewidth}{0pt}%
+}
+
+\newgeometry{top=3.0cm,bottom=3.0cm,left=3.5cm,right=3.0cm}
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\input{abstract/abstract}
+
+\tableofcontents
+\addcontentsline{toc}{chapter}{Table of Contents}
+
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+
+\cleardoublepage
+\pagenumbering{arabic}
+\chapter{Introduction}
+\input{chapters/CH1}
+
+\chapter{Related Work}
+\input{chapters/CH2}
+
+\chapter{Proposed Methodology}
+\input{chapters/CH3}
+
+\chapter{Experiments Evaluation and Analysis}
+\input{chapters/CH4}
+
+\chapter{Conclusion and Future Work}
+\input{chapters/CH5}
+
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Bibliography %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \bibliographystyle{plainnat}
+% \bibliography{References}
+\printbibliography
+
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+\input{abstract/abstract-kr}
+
+\end{document}
